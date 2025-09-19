@@ -1,0 +1,85 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+}
+main{
+  flex: 1;
+}
+:root {
+  --primary: #053e52;
+  --secondary: #0d6efd;
+  --accent: #00b4d8;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --background: #f5f7fa;
+  --background2: #eef5ff;
+  --text: #333;
+}
+
+/* header styling */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 0rem;
+}
+/* logo */
+.brand{
+  max-height: 90px;
+  width: 90px;
+}
+.brand img{
+  height: 100%;
+  width: 100%;
+}
+/* navigation */
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.nav-links li{
+  list-style: none;
+}
+.nav-links a{
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: var(--primary);
+  font-weight: 600;
+  transition: color 0.3s; 
+  position: relative;
+}
+.nav-links a:hover{
+  color: var(--accent);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
