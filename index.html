@@ -690,7 +690,260 @@
                 </div>
             </div>
         </section>
-      </div>  
+      </div> 
+      
+     <!-- Membership Form Modal -->
+  <div id="membershipModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="form-header">
+        <h1>Become A KSTCA Member</h1>
+        <p>
+          Join Kenya's premier association for swimming teachers and coaches. 
+          Advance your career and help promote water safety across the nation
+        </p>
+      </div>
+
+      <!-- the form -->
+      <div class="form-container">
+        <form action="register" method="post">
+          <p style="color: red;">Please provide correct details.</p>
+          
+          <!-- personal information -->
+          <fieldset class="personal-info">
+            <legend>Personal Information</legend>
+            <!-- name -->
+            <div class="form-group">
+              <label for="first_name"><span style="color: red;">*</span>First Name</label>
+              <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" required>
+            </div>
+            <div class="form-group">
+              <label for="last_name"><span style="color: red;">*</span>Last Name</label>
+              <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name" required>
+            </div>
+            <!-- ID number -->
+            <div class="form-group">
+              <label for="passport_id"><span style="color: red;">*</span>ID/Passport Number</label>
+              <input type="text" pattern="[A-Za-z0-9]{6,12}" id="passport_id" name="passport_id" placeholder="KX123456" maxlength="12" required>
+            </div>
+            <!-- contact info -->
+            <div class="form-group">
+              <label for="email"><span style="color: red;">*</span>Email</label>
+              <input type="email" id="email" name="email" placeholder="Enter Email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone_no"><span style="color: red;">*</span>Phone number</label>
+              <input type="tel" id="phone_no" name="phone_no" placeholder="Enter Phone number" required>
+            </div>
+            <!-- institution -->
+            <div class="form-group">
+              <label for="institution">Current Institution</label>
+              <input type="text" id="institution" name="institution" placeholder="Current Institution">
+            </div>
+            <!-- upload passport photo -->
+            <div class="form-group">
+              <label for="photo"><span style="color: red;">*</span>Passport photo</label>
+              <input type="file" id="photo" name="photo" accept=".png,.jpg,.jpeg" required>
+            </div>
+            <!-- gender -->
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select name="gender" id="gender" required>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="prefer-not-to-say">Prefer not to say</option>
+              </select>
+            </div>         
+          </fieldset>
+
+          <!-- aquatic courses  -->
+          <fieldset class="courses">
+            <legend>Aquatic Courses Done</legend>
+            <table border="1" cellspacing="0" cellpadding="8">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>COURSE UNDERTAKEN(LEVEL)</th>
+                  <th>INSTITUTION / ORGANIZATION</th>
+                  <th>DURATION</th>
+                  <th>DATE FINISHED</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td><input type="text" name="course1" required></td>
+                  <td><input type="text" name="institution1" required></td>
+                  <td><input type="number" name="duration1" placeholder="In months" required></td>
+                  <td><input type="date" name="date1" required></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td><input type="text" name="course2"></td>
+                  <td><input type="text" name="institution2"></td>
+                  <td><input type="number" name="duration2" placeholder="In months"></td>
+                  <td><input type="date" name="date2"></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td><input type="text" name="course3" ></td>
+                  <td><input type="text" name="institution3"></td>
+                  <td><input type="number" name="duration3" placeholder="In months"></td>
+                  <td><input type="date" name="date3"></td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+
+          <!-- membership type -->
+          <fieldset style="border: none;">
+            <legend>Select Membership Type</legend>
+            <div class="level-cards">
+              <div class="level-card">
+                <h4>Associate Member</h4>
+                <p>Ksh 2,500/yr</p>
+                <ul class="benefits">
+                  <li>Full voting rights in the association.</li>
+                  <li>Listing in member directory.</li>
+                  <li>Discounted workshops & conferences.</li>
+                  <li>Eligibility for recognition awards.</li>
+                </ul>
+              </div>
+              <div class="level-card">
+                <h4>Club / Institutional Member</h4>
+                <p>Ksh 10,000/yr</p>            
+                <ul  class="benefits">
+                  <li>Multiple staff memberships under one plan.</li>
+                  <li>Promotion on the association's website.</li>
+                  <li>Discounted workshops & conferences.</li>
+                  <li>Group discounts for training/certification.</li>
+                </ul>
+              </div>
+              <div class="level-card">
+                <h4>Honorary Member</h4>
+                <p>Ksh 50,000/yr</p>
+                <ul  class="benefits">
+                  <li>Honorary listings and speaking invitations.</li>
+                  <li>Discounted workshops & conferences.</li>
+                  <li>Promotion on the association's website.</li>
+                </ul>              
+              </div>
+            </div>
+            <!-- payment -->
+            <div class="form-group">
+              <label for="payment">Payment Methods</label>
+              <select name="payment" id="payment" required>
+                <option value="mpesa">Mpesa</option>
+                <option value="bank">Bank Transfer</option>
+                <option value="card">Credit/Debit Card</option>
+              </select>
+            </div>   
+          </fieldset>
+
+          <!-- user declaration -->
+          <fieldset class="declaration">
+            <legend>DECLARATION:</legend>
+            <p>
+              I have read and understood the constitution of Kenya Swimming Teacher and Coaches
+              Association and agree to abide by the rules and regulation. I confirm that the information
+              given is true to the best of my/ our knowledge. I also understand that any untrue information
+              entered into the above fields or attached to this admission form amounts to misrepresentation
+              which may attract punitive measures including (But not limited to) legal action.
+            </p>
+            <div class="agreement">
+              <input type="checkbox" id="agreement" name="agree" required>
+              <label for="agreement">I agree to the <a href="./rules">Rules</a> and <a href="./regulations">Regulations</a> of KTSCA as per the constitution</label>
+            </div>
+          </fieldset>            
+          <button class="submitBtn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Program Application Form Modal -->
+  <div id="programModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="form-header">
+        <h1>Program Application</h1>
+        <p>Apply for one of our professional swimming programs to advance your career</p>
+      </div>
+
+      <div class="form-container">
+        <form action="#" method="POST">
+          <!-- Personal Info -->
+          <fieldset class="personal-info">
+            <legend>Personal Information</legend>
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+              </div>
+          </fieldset>
+
+          <!-- Program Selection -->
+          <fieldset style="border: none;">
+            <legend>Program Selection</legend>
+            <div class="form-group">
+              <label for="program">Select Program</label>
+              <select id="program" name="program" required>
+                <option value="">-- Choose a Program --</option>
+                <option value="teacher">Swim Teacher Certification</option>
+                <option value="coach">Swim Coach Certification</option>
+                <option value="lifeguard">Lifeguard Training</option>
+                <option value="firstaid">First Aid Training</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <!-- Emergency Contact -->
+          <fieldset style="border: none;">
+            <legend>Emergency Contact</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="emergencyName">Name</label>
+                <input type="text" id="emergencyName" name="emergencyName" required>
+              </div>
+              <div class="form-group">
+                <label for="emergencyPhone">Phone</label>
+                <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
+              </div>
+              <div class="form-group">
+                <label for="relationship">Relationship</label>
+                <input type="text" id="relationship" name="relationship" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Declaration -->
+          <fieldset class="declaration">
+            <legend>Declaration</legend>
+            <p><input type="checkbox" id="agreement" required>
+              I hereby declare that the information provided is true and accurate.  
+              I agree to abide by the rules and regulations of KSTCA.
+            </p>
+          </fieldset>
+
+          <!-- Submit -->
+          <div class="form-submit">
+            <button type="submit" class="submitBtn">Submit Application</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> 
 
   </main>
 
