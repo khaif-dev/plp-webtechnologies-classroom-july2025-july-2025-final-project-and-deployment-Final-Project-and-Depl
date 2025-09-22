@@ -1,90 +1,60 @@
-# 📦 Final Assignment: Build, Organize, and Deploy a Multipage Website
+# Kenya Swimming Teachers and Coaches Association Website - README
 
-You're now ready to bring everything together—HTML, CSS, JavaScript, planning, structure, and deployment. This final project challenges you to **conceptualize, build, and deploy a multi-page website** that is responsive, interactive, and ready for the real world.
+## 📋 Project Overview
+A professional website for the Kenya Swimming Teachers and Coaches Association featuring information about their programs, membership options, and resources for swimming professionals because i don't like what the current website looks like.
 
-This assignment will guide you from planning your site all the way to deploying it online. Let’s make your project *production-worthy*! 🚀
+## 🚀 Features
+- Responsive design for all devices.
+- Multi-page navigation system.
+- Interactive modal forms for applications.
+- Contact information and inquiry forms.
 
----
+## 🛠️ Technologies Used
+- HTML5
+- CSS3 
+- JavaScript 
+- Font Awesome Icons
 
-## 🌐🎯 Part 1: Planning and Organizing a Multipage Website
+## 📁 File Structure
+```
+kstca-website/
+├── index.html   # Main website file
+├── assets/
+│   ├── images/ # Website images and logos
+├── scripts/   # JavaScript files
+└── README.md  # Project documentation
+```
+## 📱 Pages Included
+1. **Home** - Introduction and featured sections
+2. **About** - Mission, vision, and board members
+3. **Membership** - Membership tiers and application
+4. **Programs** - Training programs and certifications
+5. **Contact** - Contact information and inquiry form
 
-Before you write any code, take time to plan:
+## ⚙️ Installation & Setup
+1. Download or clone the project files
+2. Open `index.html` in any modern web browser
+3. No additional dependencies required
 
-* Define your website's purpose (portfolio, product showcase, blog, etc.)
-* Outline 3–5 pages (e.g., Home, About, Services, Contact, Gallery)
-* Sketch or describe the layout of each page
-* Map out internal navigation (how pages link to one another)
+## 🧭 Navigation System
+- Single-page application style navigation
+- Smooth scrolling between sections
+- Mobile-friendly hamburger menu
+- Active page highlighting
 
-**Goal:** Show intentional structure and user journey across the site.
+## 📝 Form Functionality
+- Membership application form with validation
+- Program application form
+- Contact form
+- File upload capability for documents
+- Form data validation
 
----
+## 🎯 Future Enhancements
+- Member login portal
+- Event calendar integration
+- Online payment processing
+- Blog/news section
+- Photo gallery
+- Resource library
+- Multi-language support
 
-## 🌍💻 Part 2: Build the Website Using HTML5, CSS, and JavaScript
-
-Using your plan, begin building:
-
-* Use HTML5 for semantic structure
-* Apply CSS for responsive layout, styling, and animations
-* Use JavaScript to add interactivity (menus, forms, toggles, dynamic content)
-
-Each page should:
-
-* Be mobile-responsive
-* Share a consistent layout/header/footer
-* Include at least one interactive element (e.g., form validation, toggle menu, animation on scroll)
-
-**Goal:** Integrate everything you’ve learned in a cohesive, functioning project.
-
----
-
-## 🛠️🚀 Part 3: Best Practices for Code Organization
-
-Before deployment, refactor your project to follow production-friendly practices:
-
-* Organize files in folders (`/css`, `/js`, `/images`, etc.)
-* Write clean, modular, and commented code
-* Use meaningful file names and relative paths
-* Validate your HTML/CSS and test on different screen sizes
-
-**Goal:** Prepare your codebase to be readable, maintainable, and scalable.
-
----
-
-## 🌐🚀 Part 4: Introduction to Hosting and Deployment
-
-Once your project is complete, choose a method to **host your site online**.
-
-You can use:
-
-* **GitHub Pages** (great for portfolios and static sites)
-* **Netlify** (powerful CI/CD features and easy form support)
-* **Vercel** (lightning-fast deployment for frontend projects)
-
-Deploy your project and confirm that:
-
-* All links and scripts work
-* It loads properly on mobile and desktop
-* It has a clear, shareable URL
-
-**Goal:** Publish your work online and make it accessible to the world.
-
----
-
-## Deliverables
-
-1. A GitHub repository containing:
-
-   * Your complete project code, properly organized
-   * A `README.md` file explaining your project purpose, structure, and live URL
-2. A live deployed website (hosted via GitHub Pages, Netlify, or Vercel)
-
----
-
-## Outcome
-
-* Clarity and thoroughness of planning documentation
-* Proper use of HTML5, CSS, and JavaScript across multiple pages
-* Responsive and accessible design
-* Clean, well-organized, and commented code
-* Successful live deployment with a working link
-* Evidence of following best practices
