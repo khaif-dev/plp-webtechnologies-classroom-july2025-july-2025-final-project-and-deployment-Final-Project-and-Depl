@@ -60,11 +60,14 @@ document.addEventListener('DOMContentLoaded', function() {
   // Modal functionality to open and close membership and program forms
   // membership modal
   const membershipModal = document.getElementById('membershipModal');
-  const applyMembershipBtn = document.querySelector('.memb-btn');
+  const applyMembershipBtn = document.querySelectorAll('.memb-btn');
   // open membership modal
-  applyMembershipBtn.addEventListener('click',()=>{
-    membershipModal.style.display = 'block';
+  applyMembershipBtn.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      membershipModal.style.display = 'block';
+    });
   });
+  
   // program modal
   const programModal = document.getElementById('programModal');
   const applyProgramBtn = document.querySelectorAll('.program-btn');
