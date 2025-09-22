@@ -3,6 +3,10 @@
 ## 📋 Project Overview
 A professional website for the Kenya Swimming Teachers and Coaches Association featuring information about their programs, membership options, and resources for swimming professionals because i don't like what the current website looks like.
 
+## 🚀 Live Demo
+[Click here to view the project](https://khaif-dev.github.io/plp-webtechnologies-classroom-july2025-july-2025-final-project-and-deployment-Final-Project-and-Depl/)
+
+
 ## 🚀 Features
 - Responsive design for all devices.
 - Multi-page navigation system.
