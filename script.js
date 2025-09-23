@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
         tel2Input.parentNode.appendChild(message);
         return;
       }
-      // forms.reset();      
+      forms.reset();      
     });
   });
 
