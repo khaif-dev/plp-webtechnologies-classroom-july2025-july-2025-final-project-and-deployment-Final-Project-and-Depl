@@ -95,9 +95,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Close modal when clicking outside
   window.addEventListener('click', function(event) {
     if (event.target == membershipModal) {
+      modalOverlay.style.display = 'none';
       membershipModal.style.display = 'none';
     }
     if (event.target == programModal) {
+      modalOverlay.style.display = 'none';
       programModal.style.display = 'none';
     }
   });
