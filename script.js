@@ -58,12 +58,14 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Modal functionality to open and close membership and program forms
+  const modalOverlay = document.querySelector('.modal-overlay')
   // membership modal
   const membershipModal = document.getElementById('membershipModal');
   const applyMembershipBtn = document.querySelectorAll('.memb-btn');
   // open membership modal
   applyMembershipBtn.forEach(btn=>{
     btn.addEventListener('click',()=>{
+      modalOverlay.style.display = 'block';
       membershipModal.style.display = 'block';
     });
   });
@@ -75,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Open program modal
   applyProgramBtn.forEach(btn=>{
     btn.addEventListener('click',()=>{
+      modalOverlay.style.display = 'block';
       programModal.style.display = 'block';
     });
   });
@@ -83,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const closeButtons = document.querySelectorAll('.close');
   closeButtons.forEach(btn => {
     btn.addEventListener('click', function() {
+      modalOverlay.style.display = 'none';
       membershipModal.style.display = 'none';
       programModal.style.display = 'none';
     });
@@ -98,24 +102,47 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // user submissions
-  const submitBtns = document.querySelectorAll('.submitBtn');
-  submitBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const form = btn.closest('form'); // find the parent form
-      console.log("Form submitted:", form);
-      form.reset();
-  });
-});
+  // // user submissions
+  // const submitBtns = document.querySelectorAll('.submitBtn');
+  // submitBtns.forEach(btn => {
+  //   btn.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     const form = btn.closest('form'); // find the parent form
+  //     alert ("Form successfully submitted:", form);
+  //     form.reset();
+  // });
+  // });
 
 
-  // prevent server behavior and reset form
+  // validate user input and reset form
   const forms = document.querySelectorAll('form');
   forms.forEach(form=>{
     form.addEventListener('submit',(e)=>{
       e.preventDefault();
-      forms.reset();      
+
+      // validate the emergency contacts are unique
+      const tel1 = document.getElementById('tel1').value.trim();
+      const tel2 = document.getElementById('tel2').value.trim();
+      const existingMessage = document.getElementById('message');
+      // remove existing message
+      if(existingMessage){
+        existingMessage.remove()
+      }
+      // validate user input
+      if(tel1 === tel2){
+        const message = document.createElement('p');
+        message.classList.add('message');        
+        message.innerHTML='please provide two unique contact persons';
+        //append to appear after name2 input
+        const tel2Input = document.getElementById('tel2');
+        tel2Input.parentNode.appendChild(message);
+        return;
+      }
+      // forms.reset();      
     });
   });
+
+
 });
+
+

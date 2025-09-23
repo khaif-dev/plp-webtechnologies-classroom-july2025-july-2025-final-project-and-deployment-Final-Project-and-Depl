@@ -29,6 +29,9 @@ main{
 
 /* header styling */
 header {
+  top: 0;
+  position: sticky;
+  background: var(--background);
   width: 100%;
   z-index: 1000;
   display: flex;
@@ -734,6 +737,16 @@ footer {
 }
 
 /* Modal Styles */
+.modal-overlay {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
 .modal {
   display: none;
   position: fixed;
@@ -823,6 +836,10 @@ form p{
   padding: 1rem;
   font-size: 1.6rem;
 }
+.message{
+  font-size: 1.2rem;
+  color: red;
+}
 .courses{
   padding: 2rem;
   margin-top: 2rem;
@@ -879,7 +896,7 @@ table input{
 }
 /* Modal Styles */
 .modal {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 2000;
   left: 0;
@@ -1030,10 +1047,19 @@ table input{
 
 /* Responsive Design */
 @media (max-width: 36rem) {
-
+/* .brand{
+  position: absolute;
+  left: 5%;
+  max-height: 90px;
+  width: 90px;
+}
+.brand img{
+  height: 100%;
+  width: 100%;
+} */
 .hamburger {
   display: flex;
-  font-size: 4rem;
+  font-size: 4.5rem;
   position: absolute;
   right: 5%;
 }
@@ -1080,7 +1106,6 @@ table input{
   padding: 0 2rem;
   grid-template-columns: 1fr;
 }
-
 .contact-container {
   grid-template-columns: 1fr;
   padding: 0 2rem;
@@ -1091,6 +1116,9 @@ table input{
 }
 .emergency-contact{
   grid-template-columns: 1fr;
+}
+.modal{
+  display: none;
 }
 
 .modal-content {
@@ -1104,14 +1132,19 @@ table input{
   gap: 1rem;  
   padding: 0rem 3rem;
 }
-.about-content{
-  text-align: left;
-}
 
 .about-content {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
+}
+.about-content h1{
+  font-size: 2rem;
+  text-align: left;
+}
+.about-content p{
+  font-size: 1.8rem;
+  text-align: left;
 }
  .how-to-apply {
   background: var(--background);
