@@ -920,6 +920,7 @@ table input{
 /* responsive design */
 /* Responsive Design */
 @media (max-width: 36rem) {
+
 .hamburger {
   display: flex;
   font-size: 4rem;
@@ -940,6 +941,9 @@ table input{
   padding: 2rem 0;
   gap: 2rem;
 }
+.heroContent p{
+  display: none;
+}
 
 .nav-links.active {
   left: 0;
@@ -956,7 +960,8 @@ table input{
 
 .membership-cards,
 .program-cards,
-.program-cards-main {
+.program-cards-main,
+.members {
   padding: 0 2rem;
   grid-template-columns: 1fr;
 }
@@ -973,5 +978,21 @@ table input{
 .modal-content {
   width: 95%;
   margin: 10% auto;
+}
+.conditions{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 1rem;  
+  padding: 0rem 3rem;
+}
+.about-content{
+  text-align: left;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
 }
 }
