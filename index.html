@@ -178,7 +178,7 @@
     <!-- ABout page -->
       <div id="about-page" class="page-content">
         <section class="about-hero">
-            <div class="heroContent">
+            <div class="hero-content">
               <h1>Kenya Swimming Teachers and Coaches Association</h1>
               <p>A premier swimming education and coaching professional body in Kenya</p>
             </div>
@@ -343,7 +343,7 @@
           <!-- membership page -->
       <div id="membership-page" class="page-content">    
         <section class="membership-hero">
-          <div class="membership-heroContent">
+          <div class="hero-content">
             <h1>Membership</h1>
             <p>Join our community of swimming professionals and advance your career</p>
             <!-- <button>Become A Member</button> -->
@@ -428,7 +428,7 @@
           <!-- programs page -->
       <div id="programs-page" class="page-content">   
         <section class="programs-hero">
-          <div class="programs-heroContent">
+          <div class="hero-content">
             <h1>Our Programs</h1>
             <p>Join us for comprehensive training and certification programs for swimming professionals</p>
           </div>
@@ -452,7 +452,7 @@
                 <p><strong>Duration:</strong> 6 Weeks</p>
                 <p><strong>Prerequisites:</strong> Strong swimming skills</p>
                 <p><strong>Other Requirements:</strong> CPR/First Aid knowledge recommended</p>
-                <p><strong>Minimum Age:</strong> 16+</p>                
+                <p><strong>Minimum Age:</strong> 18+</p>                
                 <button class="program-btn">Apply Now</button>
               </div>
             </div>
@@ -534,7 +534,7 @@
               <div class="step-num">3</div>
               <div class="step-content">
                 <h3>Complete Application Form</h3>
-                <p>Fill the online application form. You can also download the PDF form and email it if preferred.</p>
+                <p>Fill and submit the online application form. Application by any other method won't be acknowledged</p>
               </div>
             </div>
 
@@ -542,7 +542,7 @@
               <div class="step-num">4</div>
               <div class="step-content">
                 <h3>Upload Required Documents</h3>
-                <p>Attach scanned copies of: ID/Passport, CV, relevant certificates (if any), passport photo, and any referee contact.</p>
+                <p>Attach scanned copies of: passport photo, ID/Passport and any relevant certificates</p>
               </div>
             </div>
 
@@ -689,7 +689,7 @@
       <!-- the form -->
       <div class="form-container">
         <form action="register" method="post">
-          <p style="color: red;">Please provide correct details.</p>
+          <p style="color: red; text-align: center;">Please provide correct details.</p>
           
           <!-- personal information -->
           <fieldset class="personal-info">
@@ -843,7 +843,7 @@
     </div>
   </div>
 
-  <!-- Program Application Form Modal -->
+     <!-- Program Application Form Modal -->
   <div id="programModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -854,26 +854,70 @@
 
       <div class="form-container">
         <form action="#" method="POST">
-          <!-- Personal Info -->
+          <p style="color: red; text-align: center;">Please provide correct details.</p>
+          <!-- personal information -->
           <fieldset class="personal-info">
             <legend>Personal Information</legend>
-              <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required>
-              </div>
-              <div class="form-group">
-                <label for="dob">Date of Birth</label>
-                <input type="date" id="dob" name="dob" required>
-              </div>
+            <!-- name -->
+            <div class="form-group">
+              <label for="first_name"><span style="color: red;">*</span>First Name</label>
+              <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" required>
+            </div>
+            <div class="form-group">
+              <label for="last_name"><span style="color: red;">*</span>Last Name</label>
+              <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name" required>
+            </div>
+            <!-- ID number -->
+            <div class="form-group">
+              <label for="passport_id"><span style="color: red;">*</span>ID/Passport Number</label>
+              <input type="text" pattern="[A-Za-z0-9]{6,12}" id="passport_id" name="passport_id" placeholder="KX123456" maxlength="12" required>
+            </div>
+            <!-- contact info -->
+            <div class="form-group">
+              <label for="email"><span style="color: red;">*</span>Email</label>
+              <input type="email" id="email" name="email" placeholder="Enter Email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone_no"><span style="color: red;">*</span>Phone number</label>
+              <input type="tel" id="phone_no" name="phone_no" placeholder="Enter Phone number" required>
+            </div>
+            <!-- institution -->
+            <div class="form-group">
+              <label for="institution">Current Institution</label>
+              <input type="text" id="institution" name="institution" placeholder="Current Institution">
+            </div>
+            <!-- upload passport photo -->
+            <div class="form-group">
+              <label for="photo"><span style="color: red;">*</span>Passport photo</label>
+              <input type="file" id="photo" name="photo" accept=".png,.jpg,.jpeg" required>
+            </div>
+            <!-- gender -->
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select name="gender" id="gender" required>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="prefer-not-to-say">Prefer not to say</option>
+              </select>
+            </div>         
           </fieldset>
+          
+              
+          </fieldset>
+
+          <!-- upload documents -->
+           <fieldset>
+            <legend>Upload documents</legend>
+            <!-- upload ID/passport -->
+            <div class="form-group">
+              <label for="ID/passport"><span style="color: red;">*</span>ID/Passport</label>
+              <input type="file" id="ID/passport" name="ID/passport" accept=".png,.jpg,.jpeg" required>
+            </div>
+            <div class="form-group">
+              <label for="certificate">certificate</label>
+              <input class="document" type="file" id="certificate" name="certificate" accept=".png,.jpg,.jpeg">
+            </div>
+           </fieldset>
 
           <!-- Program Selection -->
           <fieldset style="border: none;">
@@ -891,20 +935,37 @@
           </fieldset>
 
           <!-- Emergency Contact -->
-          <fieldset style="border: none;">
+          <fieldset>
             <legend>Emergency Contact</legend>
-            <div class="form-grid">
-              <div class="form-group">
-                <label for="emergencyName">Name</label>
-                <input type="text" id="emergencyName" name="emergencyName" required>
+            <p style="color: red; text-align: center;"> please provide 2 unique contacts</p>
+            <div class="emergency-contact">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="name1"><span style="color: red;">*</span>Full Name</label>
+                  <input type="text" id="name1" name="emergencyName" required>
+                </div>
+                <div class="form-group">
+                  <label for="tel1"><span style="color: red;">*</span>Phone</label>
+                  <input type="tel" id="tel1" name="emergencyPhone" required>
+                </div>
+                <div class="form-group">
+                  <label for="relationship"><span style="color: red;">*</span>Relationship</label>
+                  <input type="text" id="relationship" name="relationship" required>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="emergencyPhone">Phone</label>
-                <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
-              </div>
-              <div class="form-group">
-                <label for="relationship">Relationship</label>
-                <input type="text" id="relationship" name="relationship" required>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="name2"><span style="color: red;">*</span>Full Name</label>
+                  <input type="text" id="name2" name="emergencyName" required>
+                </div>
+                <div class="form-group">
+                  <label for="tel2"><span style="color: red;">*</span>Phone</label>
+                  <input type="tel" id="tel2" name="emergencyPhone" required>
+                </div>
+                <div class="form-group">
+                  <label for="relationship"><span style="color: red;">*</span>Relationship</label>
+                  <input type="text" id="relationship" name="relationship" required>
+                </div>
               </div>
             </div>
           </fieldset>
@@ -912,7 +973,7 @@
           <!-- Declaration -->
           <fieldset class="declaration">
             <legend>Declaration</legend>
-            <p><input type="checkbox" id="agreement" required>
+            <p class="agreement"><input type="checkbox" id="agreement" required>
               I hereby declare that the information provided is true and accurate.  
               I agree to abide by the rules and regulations of KSTCA.
             </p>
@@ -925,7 +986,8 @@
         </form>
       </div>
     </div>
-  </div> 
+  </div>      
+
 
   </main>
 

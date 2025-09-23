@@ -149,17 +149,15 @@ section{
   align-items: center;
   height: 90vh;
   justify-content: center;
-  color: var(--light);
 }
 .hero-content{
-  padding: 2rem;                                         
-  max-width: 900px;                     
+  color: var(--light);
+  padding: 2rem;                                                            
   margin: auto;                         
   text-align: center; 
 }
 .hero-content h1{
   font-size: 4rem;
-  /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); */
 }
 .hero-content p{
   font-size: 2.5rem;
@@ -299,28 +297,22 @@ section{
   height: 70vh;
   background-size: cover;
   background-position: center;
-}
-.heroContent{
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--light);
-}
-.heroContent h1{
-  font-size: 5rem;
-}
-.heroContent p{
-  font-size: 3rem;
 }
 
 /* mission and vision */
 .mission-vision{
   display: flex;
   flex-direction: column;
-  padding: 5rem;
+  padding: 2rem;
   background-color: var(--background2);
+}
+.mission-vision,
+.board{
+  padding: 5rem 2rem;
 }
 .mv-cards{
   display: grid;
@@ -345,7 +337,7 @@ section{
 .board{
   display: flex;
   flex-direction: column;
-  padding: 5rem;
+  padding: 2rem;
   background: var(--background);
 }
 .members{
@@ -394,21 +386,12 @@ section{
   height: 70vh;
   background-size: cover;
   background-position: center;
-}
-.membership-heroContent{
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--light);
 }
-.membership-heroContent h1{
-  font-size: 5rem;
-}
-.membership-heroContent p{
-  font-size: 3rem;
-}
+
 .eligibility{
   display: flex;
   flex-direction: column;
@@ -437,23 +420,14 @@ section{
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(./assets/images/coach.png);
   background-size: cover;
   background-position: top;
-  height: 60vh;
+  height: 70vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  display: flex;
 }
 
-.programs-heroContent {
-  color: var(--light);
-  text-align: center;
-}
-.programs-heroContent h1 {
-  font-size: 5rem;
-}
-.programs-heroContent p {
-  font-size: 3rem;
-  margin-top: 1rem;
-}
 .program-cards-main{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -496,12 +470,11 @@ section{
 /* How to Apply */
 .how-to-apply {
   background: var(--background);
-  padding: 6rem 10rem;
+  padding: 5rem 10rem;
 }
 .apply-steps {
   display: grid;
   gap: 1.5rem;
-  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -760,16 +733,6 @@ footer {
   font-size: 1.5rem;
 }
 
-:root {
-  --primary: #053e52;
-  --secondary: #0d6efd;
-  --accent: #00b4d8;
-  --light: #f8f9fa;
-  --dark: #343a40;
-  --background: #f5f7fa;
-  --background2: #eef5ff;
-  --text: #333;
-}
 /* Modal Styles */
 .modal {
   display: none;
@@ -808,8 +771,151 @@ footer {
 .form-header {
   background: linear-gradient(to right, var(--primary), var(--accent));
   color: white;
-  padding: 3rem 2rem;
   text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 10px 10px 0 0;
+  margin: -20px -20px 20px -20px;
+}
+.form-header h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+.form-header p {
+  font-size: 1.6rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+fieldset{
+  border: none;
+}
+legend{
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+form{
+  font-size: 1.6rem;
+}
+form p{
+  font-size: 1.8rem;
+  padding: 1rem 0rem 2rem;
+}
+.personal-info{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+.form-group{
+  display: flex;
+  flex-direction: column;
+}
+.form-group label{
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.form-group input,select,{
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+.courses{
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: none;
+}
+table{
+  width: 100%;
+  /* border-collapse: collapse; */
+}
+
+table input{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.6rem;
+}
+.declaration{
+  margin-top: 2rem;
+  text-align: center;
+}
+.declaration p{
+  text-align: left;
+}
+.agreement{
+  /* margin-top: 1.5rem; */
+}
+
+.agreement label{
+  font-size: 1.8rem;
+}
+.agreement a{
+  text-decoration: none;
+  color: var(--accent);
+}
+.submitBtn{
+  width: 50%;
+  margin: 20px auto;
+  display: block;
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--accent);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.submitBtn:hover {
+  background-color: var(--primary);
+}
+/* Modal Styles */
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+}
+.modal-content {
+  background-color: var(--light);
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 1000px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: var(--primary);
+  text-decoration: none;
+}
+/* Form Styling */
+.form-header {
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  color: white;
+  padding: 3rem 2rem;
   border-radius: 10px 10px 0 0;
   margin: -20px -20px 20px -20px;
 }
@@ -831,7 +937,7 @@ legend{
 }
 form{
   font-size: 1.6rem;
-  text-align: center;
+
 }
 form p{
   /* text-align: center; */
@@ -885,7 +991,7 @@ table input{
   border: none;
 }
 .declaration p{
-  text-align: left;
+  text-align: center;
 }
 .agreement{
   /* margin-top: 1.5rem; */
@@ -915,9 +1021,13 @@ table input{
 .submitBtn:hover {
   background-color: var(--primary);
 }
+.emergency-contact{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
 
 
-/* responsive design */
 /* Responsive Design */
 @media (max-width: 36rem) {
 
@@ -941,27 +1051,32 @@ table input{
   padding: 2rem 0;
   gap: 2rem;
 }
-.heroContent p{
-  display: none;
-}
 
 .nav-links.active {
   left: 0;
 }
+.section-title h1{
+  font-size: 2.5rem;
+}
+.section-title p{
+  font-size: 1.5rem;
+}
 
 .hero-content h1 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   padding: 1rem;
 }
 
+.about-content,
 .membership-cards,
 .program-cards,
 .program-cards-main,
-.members {
+.members,
+.mv-cards {
   padding: 0 2rem;
   grid-template-columns: 1fr;
 }
@@ -972,6 +1087,9 @@ table input{
 }
 
 .personal-info {
+  grid-template-columns: 1fr;
+}
+.emergency-contact{
   grid-template-columns: 1fr;
 }
 
@@ -994,5 +1112,9 @@ table input{
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
+}
+ .how-to-apply {
+  background: var(--background);
+  padding: 5rem;
 }
 }
