@@ -1047,7 +1047,12 @@ table input{
 
 /* Responsive Design */
 @media (max-width: 36rem) {
-/* .brand{
+  header {
+  top: 0;
+  position: sticky;
+  padding: 5rem;
+}
+.brand{
   position: absolute;
   left: 5%;
   max-height: 90px;
@@ -1056,7 +1061,7 @@ table input{
 .brand img{
   height: 100%;
   width: 100%;
-} */
+}
 .hamburger {
   display: flex;
   font-size: 4.5rem;
@@ -1139,8 +1144,9 @@ table input{
   align-items: center;
 }
 .about-content h1{
-  font-size: 2rem;
-  text-align: left;
+  /* font-size: 2rem;
+  text-align: left; */
+  display: none;
 }
 .about-content p{
   font-size: 1.8rem;
