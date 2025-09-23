@@ -391,7 +391,7 @@
                   <li>Discounted workshops & conferences.</li>
                   <li>Eligibility for recognition awards.</li>
                 </ul>
-                <button class="memb-btn">Apply for Membership</button>
+                <button class="memb-btn" data-memb-type="associate">Apply for Membership</button>
               </div>
               <div class="membership-card">
                 <div class="top">
@@ -405,7 +405,7 @@
                   <li>Discounted workshops & conferences.</li>
                   <li>Group discounts for training/certification.</li>
                 </ul>
-                <button class="memb-btn">Apply for Membership</button>
+                <button class="memb-btn" data-memb-type="institutional">Apply for Membership</button>
               </div>
               <div class="membership-card">
                 <div class="top">
@@ -418,7 +418,7 @@
                   <li>Discounted workshops & conferences.</li>
                   <li>Promotion on the association’s website.</li>
                 </ul> 
-                <button class="memb-btn">Apply for Membership</button>             
+                <button class="memb-btn" data-memb-type="honorary">Apply for Membership</button>             
               </div>
             </div>
           </div>        
@@ -693,7 +693,7 @@
           <p style="color: red; text-align: center;">Please provide correct details.</p>
           
           <!-- personal information -->
-          <fieldset class="personal-info">
+          <fieldset class="personal-info" id="personal-info">
             <legend>Personal Information</legend>
             <!-- name -->
             <div class="form-group">
@@ -738,81 +738,55 @@
               </select>
             </div>         
           </fieldset>
+          
+          <!-- institutional information -->
+          <fieldset id="institutional-info" class="personal-info">
+            <legend>Institutional Information</legend>
+            <!-- name -->
+            <div class="form-group">
+              <label for="instute"><span style="color: red;">*</span>Name of Institution</label>
+              <input type="text" id="instute" name="institute" required>
+            </div>
+            <!-- email -->
+            <div class="form-group">
+              <label for="instute-email"><span style="color: red;">*</span>Institutional Email</label>
+              <input type="text" id="instute-email" name="institute-email" required>
+            </div>
+            <!-- type -->
+            <div class="form-group">
+              <label for="instute-type"><span style="color: red;">*</span>Type of Institution</label>
+              <select name="institute-type" id="instute-type">
+                <option value="swim_school" selected>Swim School</option>
+                <option value="sports_club">Sports Club</option>
+                <option value="academy">Academy</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <!-- employees -->
+            <div class="form-group">
+              <label for="staff_count">Number of Staff to Register</label>
+              <input type="number" id="staff_count" name="staff_count" min="1" value="1" max="4">
+            </div>
+          </fieldset>
 
-          <!-- aquatic courses 
-          <fieldset class="courses">
-            <legend>Aquatic Courses Done</legend>
-            <table border="1" cellspacing="0" cellpadding="8">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>COURSE UNDERTAKEN(LEVEL)</th>
-                  <th>INSTITUTION / ORGANIZATION</th>
-                  <th>DURATION</th>
-                  <th>DATE FINISHED</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td><input type="text" name="course1" required></td>
-                  <td><input type="text" name="institution1" required></td>
-                  <td><input type="number" name="duration1" placeholder="In months" required></td>
-                  <td><input type="date" name="date1" required></td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td><input type="text" name="course2"></td>
-                  <td><input type="text" name="institution2"></td>
-                  <td><input type="number" name="duration2" placeholder="In months"></td>
-                  <td><input type="date" name="date2"></td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td><input type="text" name="course3" ></td>
-                  <td><input type="text" name="institution3"></td>
-                  <td><input type="number" name="duration3" placeholder="In months"></td>
-                  <td><input type="date" name="date3"></td>
-                </tr>
-              </tbody>
-            </table>
-          </fieldset> -->
-
-          <!-- membership type -->
-          <fieldset style="border: none;">
-            <legend>Select Membership Type</legend>
-            <div class="level-cards">
-              <div class="level-card">
-                <h4>Associate Member</h4>
-                <p>Ksh 2,500/yr</p>
-                <ul class="benefits">
-                  <li>Full voting rights in the association.</li>
-                  <li>Listing in member directory.</li>
-                  <li>Discounted workshops & conferences.</li>
-                  <li>Eligibility for recognition awards.</li>
-                </ul>
+          <!-- Honorary  -->
+          <fieldset  id="honorary-info">
+            <legend>Honorary Membership Details</legend>
+            <div>
+              <div class="form-group">
+                <label for="background">Professional Background</label>
+                <textarea id="background" name="background" rows="4"></textarea>
               </div>
-              <div class="level-card">
-                <h4>Club / Institutional Member</h4>
-                <p>Ksh 10,000/yr</p>            
-                <ul  class="benefits">
-                  <li>Multiple staff memberships under one plan.</li>
-                  <li>Promotion on the association's website.</li>
-                  <li>Discounted workshops & conferences.</li>
-                  <li>Group discounts for training/certification.</li>
-                </ul>
-              </div>
-              <div class="level-card">
-                <h4>Honorary Member</h4>
-                <p>Ksh 50,000/yr</p>
-                <ul  class="benefits">
-                  <li>Honorary listings and speaking invitations.</li>
-                  <li>Discounted workshops & conferences.</li>
-                  <li>Promotion on the association's website.</li>
-                </ul>              
+              <div class="form-group">
+                <label for="contribution">Expected Contribution</label>
+                <textarea id="contribution" name="contribution" rows="4"></textarea>
               </div>
             </div>
-            <!-- payment -->
+          </fieldset>
+
+           <!-- payment -->
+          <fieldset style="border: none;">
+            <legend>Payment Method</legend>          
             <div class="form-group">
               <label for="payment">Payment Methods</label>
               <select name="payment" id="payment" required>
@@ -871,7 +845,7 @@
             <!-- ID number -->
             <div class="form-group">
               <label for="passport_id"><span style="color: red;">*</span>ID/Passport Number</label>
-              <input type="text" pattern="[A-Za-z0-9]{6,12}" id="passport_id" name="passport_id" placeholder="KX123456" maxlength="12" required>
+              <input type="text" pattern="[A-Za-z0-9]{6,12}" id="passport_id" name="passport_id" placeholder="Enter ID number" maxlength="12" required>
             </div>
             <!-- contact info -->
             <div class="form-group">
@@ -882,11 +856,7 @@
               <label for="phone_no"><span style="color: red;">*</span>Phone number</label>
               <input type="tel" id="phone_no" name="phone_no" placeholder="Enter Phone number" required>
             </div>
-            <!-- institution -->
-            <div class="form-group">
-              <label for="institution">Current Institution</label>
-              <input type="text" id="institution" name="institution" placeholder="Current Institution">
-            </div>
+
             <!-- gender -->
             <div class="form-group">
               <label for="gender">Gender</label>
@@ -896,19 +866,9 @@
                 <option value="prefer-not-to-say">Prefer not to say</option>
               </select>
             </div>         
-          </fieldset>
-          
+          </fieldset>          
 
-          <!-- upload documents -->
-           <fieldset>
-            <legend>Upload documents</legend>
-            <div class="form-group">
-              <label for="certificate">certificate</label>
-              <input class="document" type="file" id="certificate" name="certificate" accept=".png,.jpg,.jpeg,.pdf">
-            </div>
-           </fieldset>
-
-          <!-- Program Selection -->
+         <!-- Program Selection -->
           <fieldset style="border: none;">
             <legend>Program Selection</legend>
             <div class="form-group">
@@ -934,8 +894,8 @@
                   <input type="text" id="name1" name="emergencyName" required>
                 </div>
                 <div class="form-group">
-                  <label for="tel1"><span style="color: red;">*</span>Phone</label>
-                  <input type="tel" id="tel1" name="emergencyPhone" required>
+                  <label for="tel1"><span style="color: red;">*</span>Phone Number</label>
+                  <input type="tel" id="tel1" name="tel1" placeholder="0787654321" required>
                 </div>
                 <div class="form-group">
                   <label for="relationship1"><span style="color: red;">*</span>Relationship</label>
@@ -945,11 +905,11 @@
               <div class="form-grid">
                 <div class="form-group">
                   <label for="name2"><span style="color: red;">*</span>Full Name</label>
-                  <input type="text" id="name2" name="emergencyName" required>
+                  <input type="text" id="name2" name="emergencyName"  required>
                 </div>
                 <div class="form-group">
-                  <label for="tel2"><span style="color: red;">*</span>Phone</label>
-                  <input type="tel" id="tel2" name="emergencyPhone" required>
+                  <label for="tel2"><span style="color: red;">*</span>Phone Number</label>
+                  <input type="tel" id="tel2" name="emergencyPhone" placeholder="0712345678" required>
                 </div>
                 <div class="form-group">
                   <label for="relationship2"><span style="color: red;">*</span>Relationship</label>
@@ -987,13 +947,15 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-col">
-          <h3>About KSTCA</h3>
-          <p>The Kenya Swimming Teachers and Coaches Association is dedicated to improving swimming education and coaching standards throughout Kenya.</p>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <div class="col1">
+            <h3>About KSTCA</h3>
+            <p>The Kenya Swimming Teachers and Coaches Association is dedicated to improving swimming education and coaching standards throughout Kenya.</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
           </div>
         </div>
             
@@ -1038,3 +1000,5 @@
  <script src="./script.js"></script> 
 </body>
 </html>
+
+
