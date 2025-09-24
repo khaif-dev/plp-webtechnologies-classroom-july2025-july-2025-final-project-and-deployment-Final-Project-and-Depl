@@ -77,18 +77,32 @@ document.addEventListener('DOMContentLoaded', function() {
     honorary_info.style.display = 'none';
     professional_info.style.display = 'none';
 
-    // toggle the sections
+    // Remove required attributes from all hidden fields
+    document.querySelectorAll('input[required], select[required]').forEach(field => {
+      field.removeAttribute('required');
+    });
+
+    // toggle the sections and add required attributes
     switch(type){
       case 'associate':
         personal_info.style.display = 'grid';
         professional_info.style.display = 'block';
+        personal_info.querySelectorAll('input, select').forEach(field => {
+          if (field.hasAttribute('data-required')) field.setAttribute('required', '');
+        });
         break;
       case 'institutional':
         institute_info.style.display = 'grid';
+        institute_info.querySelectorAll('input, select').forEach(field => {
+          if (field.hasAttribute('data-required')) field.setAttribute('required', '');
+        });
         break;
       case 'honorary':
         honorary_info.style.display = 'block';
         personal_info.style.display = 'grid';
+        honorary_info.querySelectorAll('input, select').forEach(field => {
+          if (field.hasAttribute('data-required')) field.setAttribute('required', '');
+        });
       break;
     }
   }
@@ -238,8 +252,9 @@ document.addEventListener('DOMContentLoaded', function() {
   forms.forEach(form=>{
     form.addEventListener('submit',(e)=>{
       e.preventDefault();
+      alert('Form successfully submitted')
 
-      // // find form that trigerred event
+      // find form that trigerred event and reset
       const targetForm =e.target.closest('form');
       targetForm.reset();   
     });
