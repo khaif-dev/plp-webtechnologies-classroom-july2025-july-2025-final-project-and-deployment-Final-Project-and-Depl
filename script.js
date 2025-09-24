@@ -62,27 +62,33 @@ document.addEventListener('DOMContentLoaded', function() {
   // membership modal
   const membershipModal = document.getElementById('membershipModal');
   const applyMembershipBtn = document.querySelectorAll('.memb-btn');
+
   // sections of the form
   const personal_info = document.getElementById('personal-info');
   const institute_info = document.getElementById('institutional-info');
   const honorary_info = document.getElementById('honorary-info');
+  const professional_info = document.getElementById('professional-info');
+
   // function to show and hide necessary section
   function toggleSections(type){
     // hide all sections first
     personal_info.style.display = 'none';
     institute_info.style.display = 'none';
     honorary_info.style.display = 'none';
+    professional_info.style.display = 'none';
 
-    // use switch case to toggle
+    // toggle the sections
     switch(type){
       case 'associate':
         personal_info.style.display = 'grid';
+        professional_info.style.display = 'block';
         break;
       case 'institutional':
         institute_info.style.display = 'grid';
         break;
       case 'honorary':
         honorary_info.style.display = 'block';
+        personal_info.style.display = 'grid';
       break;
     }
   }
@@ -134,54 +140,112 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // function to display error messages as user inputs
+  function showMessage(inputElement, text, color = 'red', duration = 0){
+    // remove any existing message    
+    const existingMessage = inputElement.parentNode.querySelector('.message');
+    if (existingMessage) existingMessage.remove();
 
+    // creating the message
+    const message = document.createElement('p');
+    message.classList.add('message');
+    message.style.color = color;
+    message.textContent = text;
+    inputElement.parentNode.appendChild(message);
+    
+    if (duration > 0) {
+      setTimeout(() => {
+        message.remove();
+      }, duration);
+    }
+  }
 
-  // validate user input and reset form
+  // get user input 
+  const telInput = document.getElementById('tel');
+  const tel1Input = document.getElementById('tel1');
+  const tel2Input = document.getElementById('tel2');
+
+  // validate length of the phone numbers
+  function validTel(number){
+    return /^\d{10}$/.test(number)
+  }
+
+  // validating user phone number
+  telInput.addEventListener('input', () => {
+    const tel = telInput.value.trim();
+
+    if (!validTel(tel)) {
+      showMessage(telInput, 'Please provide a valid number');
+    } else {
+      const existing = telInput.parentNode.querySelector('.message');
+      if (existing) existing.remove();
+    }
+  });
+
+ 
+  // tel1 validation
+  tel1Input.addEventListener('input', () => {
+    const tel = telInput.value;
+    const tel1 = tel1Input.value;
+
+    // check if tel 1 is valid
+    if (!validTel(tel1)) {
+      showMessage(tel1Input, 'Please provide a valid number');
+      return;
+    }
+
+    // // Check if tel is valid before comparing
+    // if (validTel(tel) && tel1 === tel) {
+    //   showMessage(tel1Input, 'You cannot be your own emergency contact');
+    //   return;
+    // }
+
+    // // compare tel and tel1 phone number
+    // if (tel1 === tel) {
+    //   showMessage(tel1Input, 'You cannot be your own emergency contact');
+    //   return;
+    // }
+
+    // Valid, remove message
+    const existing = tel1Input.parentNode.querySelector('.message');
+    if (existing) existing.remove();
+  });
+
+  // tel2 validation 
+  tel2Input.addEventListener('input', () => {
+    const tel = telInput.value;
+    const tel1 = tel1Input.value;
+    const tel2 = tel2Input.value;
+    
+    // confirm its 10 digits
+    if (!validTel(tel2)) {
+      showMessage(tel2Input, 'Please provide a valid number');
+      return;
+    }
+
+    // Check its unique
+    if (tel2 === tel || tel2 === tel1) {
+      showMessage(tel2Input, 'Please provide two unique contact persons');
+      return;
+    }
+
+    // All valid
+    showMessage(tel2Input, 'Unique contacts provided', 'green', 2000);
+  });
+
+  //  reset form on submit 
   const forms = document.querySelectorAll('form');
   forms.forEach(form=>{
     form.addEventListener('submit',(e)=>{
       e.preventDefault();
 
       // // find form that trigerred event
-      // const targetForm =e.target.closest('form');
-      if (validateForm(e.target)){
-        alert('Form submitted successfully');
-        e.target.reset(); 
-      }     
+      const targetForm =e.target.closest('form');
+      targetForm.reset();   
     });
   });
 
-  // validate the emergency contacts are unique
-  function validateForm(){
-    const tel1 = document.getElementById('tel1').value.trim();
-    const tel2 = document.getElementById('tel2').value.trim();
-    const existingMessage = document.querySelector('.message');
-    // remove existing message
-    if(existingMessage){
-      existingMessage.remove();
-    }
-
-    // validate user input
-    const message = document.createElement('p');
-    message.classList.add('message');
-    if(tel1 === tel2){        
-      message.innerHTML='please provide two unique contact persons';
-      //append to appear after name2 input
-      const tel2Input = document.getElementById('tel2');
-      tel2Input.parentNode.appendChild(message);
-      return false;
-    }else{
-      message.innerHTML ='unique contacts provided';
-      message.style.color = 'green';
-      const tel2Input = document.getElementById('tel2');
-      tel2Input.parentNode.appendChild(message);
-      return true;
-    }
-
-           
-  }
-
-
+  
 });
 
 

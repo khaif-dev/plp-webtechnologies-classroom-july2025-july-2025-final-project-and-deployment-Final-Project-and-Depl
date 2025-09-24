@@ -525,8 +525,8 @@
             <div class="step">
               <div class="step-num">2</div>
               <div class="step-content">
-                <h3>Check Eligibility & Schedule</h3>
-                <p>Confirm you meet the eligibility criteria and select a suitable intake date/location from the schedule.</p>
+                <h3>Check Eligibility</h3>
+                <p>Confirm you meet the eligibility criteria.</p>
               </div>
             </div>
 
@@ -541,21 +541,13 @@
             <div class="step">
               <div class="step-num">4</div>
               <div class="step-content">
-                <h3>Upload Required Documents</h3>
-                <p>Attach scanned copies of: passport photo, ID/Passport and any relevant certificates</p>
-              </div>
-            </div>
-
-            <div class="step">
-              <div class="step-num">5</div>
-              <div class="step-content">
                 <h3>Pay Fees</h3>
                 <p>Pay the program fee or deposit using M-Pesa, bank transfer or card. Save your payment proof (transaction ID/receipt).</p>
               </div>
             </div>
 
             <div class="step">
-              <div class="step-num">6</div>
+              <div class="step-num">5</div>
               <div class="step-content">
                 <h3>Application Review & Confirmation</h3>
                 <p>We review your application within 3–5 business days. You will get an email/SMS confirmation with next steps.</p>
@@ -563,7 +555,7 @@
             </div>
 
             <div class="step">
-              <div class="step-num">7</div>
+              <div class="step-num">6</div>
               <div class="step-content">
                 <h3>Attend Orientation / Pre-assessment</h3>
                 <p>Attend the scheduled orientation and any required swimming or fitness tests before the course starts.</p>
@@ -571,7 +563,7 @@
             </div>
 
             <div class="step">
-              <div class="step-num">8</div>
+              <div class="step-num">7</div>
               <div class="step-content">
                 <h3>Complete Course & Assessment</h3>
                 <p>Participate fully in the training, practical sessions and final assessments.</p>
@@ -579,7 +571,7 @@
             </div>
 
             <div class="step">
-              <div class="step-num">9</div>
+              <div class="step-num">8</div>
               <div class="step-content">
                 <h3>Receive Certification</h3>
                 <p>After successful completion you will receive your certificate and details for continuing professional development.</p>
@@ -697,26 +689,26 @@
             <legend>Personal Information</legend>
             <!-- name -->
             <div class="form-group">
-              <label for="first_name"><span style="color: red;">*</span>First Name</label>
-              <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" required>
+              <label for="firstName"><span style="color: red;">*</span>First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Enter First Name" required>
             </div>
             <div class="form-group">
-              <label for="last_name"><span style="color: red;">*</span>Last Name</label>
-              <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name" required>
+              <label for="lastName"><span style="color: red;">*</span>Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name" required>
             </div>
             <!-- ID number -->
             <div class="form-group">
               <label for="passport_id"><span style="color: red;">*</span>ID/Passport Number</label>
-              <input type="text" pattern="[A-Za-z0-9]{6,12}" id="passport_id" name="passport_id" placeholder="KX123456" maxlength="12" required>
+              <input type="text" pattern="[A-Za-z0-9]{6,12}" id="passport_id" name="passport_id" placeholder="Enter Id number" maxlength="12" required>
             </div>
             <!-- contact info -->
             <div class="form-group">
-              <label for="email"><span style="color: red;">*</span>Email</label>
-              <input type="email" id="email" name="email" placeholder="Enter Email" required>
+              <label for="memb-email"><span style="color: red;">*</span>Email</label>
+              <input type="email" id="memb-email" name="memb-email" placeholder="Enter Email" required>
             </div>
             <div class="form-group">
-              <label for="phone_no"><span style="color: red;">*</span>Phone number</label>
-              <input type="tel" id="phone_no" name="phone_no" placeholder="Enter Phone number" required>
+              <label for="tel"><span style="color: red;">*</span>Phone number</label>
+              <input type="tel" id="tel" name="memb_phone_no" placeholder="0712345678" maxlength="10"   pattern="\d{10}" inputmode="numeric" required>
             </div>
             <!-- institution -->
             <div class="form-group">
@@ -736,9 +728,29 @@
                 <option value="male">Male</option>
                 <option value="prefer-not-to-say">Prefer not to say</option>
               </select>
-            </div>         
+            </div>
           </fieldset>
-          
+
+
+          <!-- professional certification -->
+          <fieldset id="professional-info" style="margin-bottom: 3rem;">
+            <legend>Swimming Qualifications</legend>
+            <div>
+              <div>
+                <input type="checkbox" id="level1" name="qualification_level" value="level1">
+                <label for="level1">Level 1 Swimming Coach</label>
+              </div>
+              <div>
+                <input type="checkbox" id="level2" name="qualification_level" value="level2">
+                <label for="level2">Level 2 Swimming Coach</label>
+              </div>
+              <div>
+                <input type="checkbox" id="level3" name="qualification_level" value="level3">
+                <label for="level3">Level 3 Senior Swimming Coach</label>
+              </div>
+            </div>
+          </fieldset>
+
           <!-- institutional information -->
           <fieldset id="institutional-info" class="personal-info">
             <legend>Institutional Information</legend>
@@ -842,11 +854,6 @@
               <label for="last_name"><span style="color: red;">*</span>Last Name</label>
               <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name" required>
             </div>
-            <!-- ID number -->
-            <div class="form-group">
-              <label for="passport_id"><span style="color: red;">*</span>ID/Passport Number</label>
-              <input type="text" pattern="[A-Za-z0-9]{6,12}" id="passport_id" name="passport_id" placeholder="Enter ID number" maxlength="12" required>
-            </div>
             <!-- contact info -->
             <div class="form-group">
               <label for="email"><span style="color: red;">*</span>Email</label>
@@ -854,7 +861,7 @@
             </div>
             <div class="form-group">
               <label for="phone_no"><span style="color: red;">*</span>Phone number</label>
-              <input type="tel" id="phone_no" name="phone_no" placeholder="Enter Phone number" required>
+              <input type="tel" id="phone_no" name="phone_no" placeholder="0712345678" maxlength="10"  pattern="\d{10}" inputmode="numeric" required>
             </div>
 
             <!-- gender -->
@@ -874,7 +881,6 @@
             <div class="form-group">
               <label for="program"><span style="color: red;">*</span>Select Program</label>
               <select id="program" name="program" required>
-                <option value="">-- Choose a Program --</option>
                 <option value="teacher">Swim Teacher Certification</option>
                 <option value="coach">Swim Coach Certification</option>
                 <option value="lifeguard">Lifeguard Training</option>
@@ -895,7 +901,7 @@
                 </div>
                 <div class="form-group">
                   <label for="tel1"><span style="color: red;">*</span>Phone Number</label>
-                  <input type="tel" id="tel1" name="tel1" placeholder="0787654321" required>
+                  <input type="tel" id="tel1" name="tel1" placeholder="0787654321" maxlength="10"  pattern="\d{10}" inputmode="numeric" required>
                 </div>
                 <div class="form-group">
                   <label for="relationship1"><span style="color: red;">*</span>Relationship</label>
@@ -909,7 +915,7 @@
                 </div>
                 <div class="form-group">
                   <label for="tel2"><span style="color: red;">*</span>Phone Number</label>
-                  <input type="tel" id="tel2" name="emergencyPhone" placeholder="0712345678" required>
+                  <input type="tel" id="tel2" name="emergencyPhone" placeholder="0712345678" maxlength="10"  pattern="\d{10}" inputmode="numeric" required>
                 </div>
                 <div class="form-group">
                   <label for="relationship2"><span style="color: red;">*</span>Relationship</label>

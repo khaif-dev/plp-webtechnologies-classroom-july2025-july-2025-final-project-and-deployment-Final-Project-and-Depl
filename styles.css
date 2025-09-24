@@ -184,7 +184,6 @@ section{
   font-size: 2.8rem;
   color: var(--primary);
   margin-bottom: 2rem;
-  display: none;
 }
 
 .about-text p{
@@ -838,6 +837,9 @@ form p{
   border-radius: 12px;
   padding: 1rem;
   font-size: 1.6rem;
+}
+#professional-info{
+  display: flex;
 }
 .message{
   font-size: 1.2rem;
